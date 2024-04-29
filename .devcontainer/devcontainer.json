@@ -1,14 +1,12 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
-	"name": "Node.js & TypeScript",
+	"name": "Solana Dev Environment",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye",
-
-	"remoteEnv": {
-		// Add custom PATH to the remote environment. (Rust & Solana CLI)
-		"PATH": "${containerEnv:PATH}:$HOME/.cargo/bin:/home/node/.local/share/solana/install/active_release/bin"
-	}
+	"build": {
+        // Path is relative to the devcontainer.json file.
+        "dockerfile": "Dockerfile"
+    }
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
