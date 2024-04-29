@@ -27,5 +27,8 @@ ENV PATH="${HOME}/.local/share/solana/install/active_release/bin:$PATH"
 # install anchor
 RUN cargo install --git https://github.com/coral-xyz/anchor --tag ${ANCHOR_CLI} anchor-cli --locked
 
+# Build a dummy program to bootstrap the BPF SDK (doing this speeds up builds).
+RUN mkdir -p /tmp && cd tmp && anchor init dummy && cd dummy && anchor build
+
 # enable React Hot Reload in Container
 ENV WATCHPACK_POLLING=true
