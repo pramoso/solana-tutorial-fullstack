@@ -32,7 +32,7 @@ async function getBalanceUsingJSONRPC(address: string): Promise<number> {
     })
 }
 
-const publicKey = new PublicKey('ALEKau1KQdrMva95BtuM4Whc2mc79qntYYaobA1y9f4e')
+const publicKey = new PublicKey('5HkTMoVp7pmejEysdazr4eAzqnEuXaNyGRyLzgwpzpSA')
 
 getBalanceUsingWeb3(publicKey).then((balance) => {
     console.log('Balance:', balance / LAMPORTS_PER_SOL);
